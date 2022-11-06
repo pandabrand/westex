@@ -1,0 +1,30 @@
+// @import url('//fonts.googleapis.com/css?family=Raleway|Montserrat');
+
+// Grid settings
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+
+// Colors
+$brand-primary:         #27ae60;
+$color__text-main:      #292b2c;
+$color__link:           #69BD39;
+$color__link--active:   #023853;
+$color__border:         #4e5254;
+
+$brand-chicago:         rgb(212, 80, 194);
+$brand-skokie:         rgb(242, 152, 233);
+$brand-online:         rgb(236, 190, 236);
+
+// Fonts
+// $montserrat: 'Montserrat', 'Helvetica', sans-serif;
+$raleway: 'Raleway', 'Helvetica', sans-serif;
+$sanchez: 'Sanchez', 'Rockwell', 'Courier Bold', Courier, Georgia, Times, 'Times New Roman', serif;
+$gentium: 'Gentium Book Basic', 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
+$lato: 'Lato', 'Helvetica', sans-serif;
+$body-font: $gentium;
+$header-font: $gentium;
+$caption-font: $lato;
+$font__main: $body-font;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+$font-size: 16px;

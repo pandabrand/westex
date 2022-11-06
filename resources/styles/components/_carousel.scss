@@ -1,0 +1,28 @@
+.front-carousel {
+    .carousel-cell {
+        height: 200px;
+        width: 100%;
+
+        @include media-breakpoint-up(md) {
+            height: 650px;
+        }
+
+        .card {
+            border: none;
+            margin: 0 0.5rem;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+
+        .card-img-top {
+            height: 450px;
+            object-fit: contain;
+        }
+    }
+}

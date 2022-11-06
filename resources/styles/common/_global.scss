@@ -1,0 +1,101 @@
+body,
+button,
+input,
+select,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	font-size: $font-size;
+	line-height: $font__line-height-body;
+}
+
+address {
+  font-family: $caption-font;
+}
+
+a {
+  color: var(--bs-black);
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+  &:link {
+    color: var(--bs-black);
+  }
+  &:visited {
+    color: var(--bs-black);
+  }
+  &:hover, &:active {
+    color: $color__link;
+  }
+
+  &.no-decoration {
+    text-decoration: none;
+  }
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.u-smalltext {
+  font-size: .7em;
+}
+
+.u-label-font {
+  font-family: $caption-font !important;
+}
+
+.u-caption {
+  font-family: $caption-font;
+  text-align: right;
+}
+
+.u-extra-v-margin {
+  margin: 2rem 0;
+}
+
+.u-titlecase {
+  text-transform: capitalize;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $header-font;
+  font-weight: normal;
+}
+
+.page-header {
+  h1,
+  .h1 {
+    font-family: $caption-font;
+  }
+}
+
+h1, .h1 {
+  font-size: 1.728rem;
+}
+
+h2, .h2 {
+  font-size: 1.44rem;
+}
+
+h3, .h3 {
+  font-size: 1.2rem;
+}
+
+h4, .h4 {
+  font-size: 1rem;
+}
+
+h5, .h5 {
+  font-size: .833rem;
+}
+
+h6, .h6 {
+  font-size: 694rem;
+}
+
+.wx-border {
+  border: 1px solid $color__text-main;
+}

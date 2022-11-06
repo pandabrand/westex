@@ -1,0 +1,125 @@
+.btn-tock {
+    color: $color__link;
+    border: 1px solid $color__link;
+    border-radius: 0px;
+    font-family: $lato;
+  
+    &:hover {
+      color: invert($color__link, 100%);
+      background-color: $color__link;
+    }
+  }
+
+  .btn {
+    &-location {
+      font-family: $lato;
+      margin: 0 1rem; 
+      width: 100%;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: x-large;
+      font-weight: bold;
+      border-radius: 0.125rem;
+      color: var(--bs-black);
+
+      &:link {
+        color: var(--bs-black);
+      }
+
+      &:visited {
+        color: var(--bs-black);
+      }
+
+      &:hover {
+        color: $white;
+      }
+
+      &:focus {
+        outline: 1px solid $link-color;
+      }
+
+      &:active {
+        color: $white;
+      }
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    &-chicago {
+      background-color: $brand-chicago;
+      border-color: darken($brand-chicago, 10%);
+      
+      &:hover {
+        background-color: darken($brand-chicago, 10%);
+        border-color: darken($brand-chicago, 65%);
+      }
+
+      &:focus {
+        outline: 1px solid $color__link;
+        background-color: lighten($brand-chicago, 10%);
+        border-color: lighten($brand-chicago, 15%);
+        box-shadow: 0 0 0 0.25rem rgba(darken($color__link, 25%), 0.5);
+      }
+
+      &:active {
+        outline: 1px solid $color__link;
+        background-color: lighten($brand-chicago, 10%);
+        border-color: lighten($brand-chicago, 15%);
+        color: $white;
+      }
+    }
+    &-skokie {
+      background-color: $brand-skokie;
+      border-color: darken($brand-skokie, 10%);
+      
+      &:hover {
+        background-color: darken($brand-skokie, 35%);
+        border-color: darken($brand-skokie, 65%);
+      }
+
+      &:focus {
+        outline: 1px solid $brand-skokie;
+        background-color: lighten($brand-skokie, 10%);
+        border-color: lighten($brand-skokie, 15%);
+        box-shadow: 0 0 0 0.25rem rgba(darken($color__link, 25%), 0.5);
+      }
+
+      &:active {
+        outline: 1px solid $color__link;
+        background-color: lighten($brand-skokie, 10%);
+        border-color: lighten($brand-skokie, 15%);
+        color: $white;
+      }
+    }
+
+    &-online {
+      background-color: $brand-online;
+      border-color: darken($brand-online, 10%);
+      
+      &:hover {
+        background-color: darken($brand-online, 35%);
+        border-color: darken($brand-online, 65%);
+      }
+
+      &:focus {
+        outline: 1px solid $color__link;
+        background-color: lighten($brand-online, 10%);
+        border-color: lighten($brand-online, 15%);
+        box-shadow: 0 0 0 0.25rem rgba(darken($color__link, 25%), 0.5);
+      }
+
+      &:active {
+        outline: 1px solid $color__link;
+        background-color: lighten($brand-online, 10%);
+        border-color: lighten($brand-online, 15%);
+        color: $white;
+      }
+    }
+  }

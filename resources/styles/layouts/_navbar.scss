@@ -1,0 +1,46 @@
+.l-main-navbar-wrapper {
+  flex-direction: row-reverse;
+}
+
+.l-main-navbar {
+  padding: 1rem 0;
+  font-family: $caption-font;
+}
+
+.l-main-nav {
+  margin-left: 1rem;
+  .menu-item {
+    margin: 0 2rem;
+    .dropdown-toggle:after {
+      display: none;
+    }
+    .dropdown-menu {
+      border: none;
+    }
+    .nav-link {
+      color: var(--bs-black);
+      padding-right: 0;
+
+      &:link {
+        color: var(--bs-black);
+      }
+
+      &:visited {
+        color: var(--bs-black);
+      }
+
+      &:hover {
+        color: $color__link;
+      }
+
+      &:active,
+      &.active {
+        color: $color__link--active;
+      }
+    }
+    
+    &:last-child {
+      margin: 0 0 0 2rem;
+    }
+  }
+}
