@@ -12,12 +12,12 @@
     <div class="d-flex flex-wrap">
       @foreach($artists as $artist)
         <div class="pr-2 h1">
-          <a href="{{ $artist['permalink'] }}">{{ $artist['title'] }}</a>
+          <a href="{{ $artist['permalink'] }}">{!! $artist['title'] !!}</a>
         </div>
       @endforeach
 
       @foreach($non_roster_artists as $non_roster_artist)
-        <div class="pr-2 h1">{{ $non_roster_artist }}</div>
+        <div class="pr-2 h1">{!! $non_roster_artist !!}</div>
       @endforeach
     </div>
 
@@ -34,7 +34,7 @@
     <div class="u-extra-v-margin u-label-font horizontal-rule">
       {{ $start_date }} - {{ $end_date }}<br/>
       @if($off_site_exhibition == 0)
-        In {{ $term }}
+        <strong>{{ $term }}</strong>{{ $term_location }}
       @endif
     </div>
     <div class="l-exhibition-featured-image mb-5">

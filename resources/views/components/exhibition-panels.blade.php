@@ -3,9 +3,6 @@
         <div class="col-md-6 pl-0">
             <a class="no-decoration" href="{{ $exhibition['permalink'] }}" title="{{ $exhibition['title'] }}">
                 <div class="jsExhibitionLink" >
-                    <div class="c-front-gallery_smalltype u-label-font">
-                        <strong>{!! $exhibition['term'] !!}</strong> {!! $exhibition['term_location'] !!}
-                    </div>
                     @if(isset($exhibition['switch_title']) && $exhibition['switch_title'] == 1)
                         @if($exhibition['show_title'])
                             <div class="c-front-gallery_h1 emphasis">{!! $exhibition['title'] !!}</div>
@@ -38,10 +35,13 @@
                             @endif
                         </div>
                         @if($exhibition['show_title'])
-                            <div class="strong emphasis">{!! $exhibition['title'] !!}</div>
+                            <div class="emphasis">{!! $exhibition['title'] !!}</div>
                         @endif
                     @endif
-                    <div class="c-front-gallery_smalltype u-extra-v-margin u-label-font">{!! $exhibition['start_date'] !!} - {!! $exhibition['end_date'] !!}</div>
+                    <div class="c-front-gallery_smalltype u-extra-v-margin u-label-font">
+                        {!! $exhibition['start_date'] !!} - {!! $exhibition['end_date'] !!}<br>
+                        <strong>{!! $exhibition['term'] !!}</strong> {!! $exhibition['term_location'] !!}
+                    </div>
                 </div>
             </a>
         </div>

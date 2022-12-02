@@ -24,7 +24,14 @@ class SingleExhibition extends Composer
     {
       $location = get_the_terms(get_the_ID(), 'location');
       $term = array_pop($location);
-      $non_rosters = get_field('artist_non-roster', get_the_ID());
+      $term_location = '';
+
+      if ( ( stripos( $term->name, 'gallery' ) !== false ) ) {
+        $term_location = ', Chicago';
+      } elseif ( ( stripos( $term->name, '(northern)' ) !== false ) ) {
+        $term_location = ', Skokie';
+      }
+$non_rosters = get_field('artist_non-roster', get_the_ID());
       $artists_non_roster = ($non_rosters) ? array_map(
           function ($row) {
               return $row['artist_non-roster_name'];
@@ -55,6 +62,7 @@ class SingleExhibition extends Composer
         'permalink'           => get_permalink(get_the_ID()),
         'title'               => get_the_title(get_the_ID()),
         'term'                => $term->name,
+        'term_location'       => $term_location,
         'start_date'          => get_field('start_date', get_the_ID()),
         'display_start_date'  => get_field('display_start_date', get_the_ID()),
         'end_date'            => get_field('end_date', get_the_ID()),
