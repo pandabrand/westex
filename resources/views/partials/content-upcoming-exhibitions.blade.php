@@ -43,7 +43,7 @@
                 @endforeach
 
                 @foreach($off_site_exhibition['non_roster_artists'] as $non_roster_artist)
-                  <div>{{ $non_roster_artist }}</div>
+                  <div>{!! $non_roster_artist !!}</div>
                 @endforeach
               </a>
             </div>

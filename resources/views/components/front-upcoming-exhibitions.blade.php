@@ -21,7 +21,7 @@
                         @if($upcoming['show_title'] == 1)
                             <a href="{{ $upcoming['permalink'] }}">
                         endif
-                        <div class="pr-2">$artist['post_title']</div>
+                        <div class="pr-2">{!! $artist['post_title'] !!}</div>
                         if($upcoming['show_title'] == 1)
                             </a>
                         @endif
@@ -43,7 +43,7 @@
                             @if($upcoming['show_title'] == 1)
                                 <a href="{{ $upcoming['permalink'] }}">
                             endif
-                            <div class="pr-2">$artist['post_title']</div>
+                            <div class="pr-2">{!! $artist['post_title'] !!}</div>
                             if($upcoming['show_title'] == 1)
                                 </a>
                             @endif

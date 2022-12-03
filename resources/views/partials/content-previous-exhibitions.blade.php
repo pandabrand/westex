@@ -28,7 +28,7 @@
         <div class="d-flex flex-wrap mt-2">
           @if($exhibition['artists'])
             @foreach($exhibition['artists'] as $artist)
-              <div class="strong h4 px-1">{{$artist['post_title']}}</div>
+              <div class="strong h4 px-1">{!! $artist['post_title'] !!}</div>
             @endforeach
           @endif
           
