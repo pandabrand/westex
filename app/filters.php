@@ -53,8 +53,8 @@ function body_class($classes) {
 		 is_page_template(['template-upcoming_exhibitions.php', 'page-upcoming-exhibitions.blade.php']),
 		 is_page_template('template-viewing-room.php'),
 		 is_page_template('page-shop.blade.php'),
-		 is_post_type_archive(array('artist', 'art_fair', 'in-depth')),
-		 is_singular(array('exhibition', 'in-depth'))
+		 is_post_type_archive(['artist', 'art_fair', 'in-depth']),
+		 is_singular(['exhibition', 'in-depth', 'art_fair'])
 	 ]);
 
 	 // Add class if sidebar is active

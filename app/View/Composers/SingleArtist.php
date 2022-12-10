@@ -18,18 +18,16 @@ class SingleArtist extends Composer
 	
 	public function override()
 	{
-		$bio_details = get_field('born_details', get_the_ID());
-
 		return [
 			'link'          => get_the_permalink(),
 			'thumbnail'     => get_the_post_thumbnail(get_the_ID(), 'full', array('class' => 'd-flex img-fluid mx-auto')),
 			'alt_string'    => str_replace(PHP_EOL, '', get_the_title(get_post_thumbnail_id()).' '.get_post(get_post_thumbnail_id())->post_content),
-			'born_detail'   => $bio_details[0]['born_detail'],
-			'work_detail'   => $bio_details[0]['work_detail'],
+			'born_details'  => get_field('born_details', get_the_ID()),
 			'artist_images' => $this->artistCollection(),
 			'cv_file'       => get_field('cv_file', get_the_ID()),
 		];
 	}
+
 
 	public function artistCollection()
 	{
@@ -46,6 +44,8 @@ class SingleArtist extends Composer
 				'url'         => ('video' == $image['type']) ? $image['url'] : $image['sizes']['large'],
 				'description' => $image['description'],
 				'thumbnail'   => $image['sizes']['medium'],
+				'thumbnail-w' => $image['sizes']['medium-width'],
+				'thumbnail-h' => $image['sizes']['medium-height'],
 				'caption'     => htmlentities(str_replace(PHP_EOL, ' ' , $image['title'] . ' ' . $image['description']), ENT_QUOTES),
 			];
 

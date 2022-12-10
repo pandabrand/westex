@@ -1,6 +1,6 @@
 <footer class="content-info content-info my-5">
   <div class="container">
-    <div class="d-flex flex-row-reverse c-footer">
+    <div class="d-flex flex-column-reverse flex-md-row-reverse c-footer">
       @php(dynamic_sidebar('sidebar-footer'))
       <div class="d-flex flex-column justify-content-between">
         <address class="py-2 pl-2 text-right">
@@ -14,7 +14,7 @@
           Sunday, 10am to 3pm
         </div>
       </div>
-      <div class="px-4 d-flex flex-column justify-content-between">
+      <div class="px-0 px-md-4 d-flex flex-column justify-content-between">
         <address class="py-2 pl-2 text-right">
           <span class="strong">Western Exhibitions</span><br/>
           1709 W Chicago Ave<br/>
@@ -37,7 +37,7 @@
         </ul>
       </div>
     </div>
-    <div class="u-smalltext u-label-font">
+    <div class="mt-4 u-smalltext u-label-font">
       ALL IMAGES &copy; WESTERN EXHIBITIONS & EACH INDIVIDUAL ARTIST
     </div>
   </div>

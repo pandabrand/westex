@@ -3,9 +3,11 @@
     <h1 class="entry-title">
       {!! $title !!}
     </h1>
-    @if( $born_detail || $work_detail )
-      <div>{{$born_detail}}</div>
-      <div>{{$work_detail}}</div>
+    @if( $born_details )
+      @foreach ( $born_details as $detail )
+        <div>{{$detail['born_detail']}}</div>
+        <div class="mb-2">{{$detail['work_detail']}}</div>
+      @endforeach
     @endif
   </header>
 
@@ -30,7 +32,7 @@
                   <div class="grid-item p-2">
                       <div class="l-gallery-item">
                           <a href="{{$image['url']}}" data-fancybox="gallery-images" data-caption="{{$image['caption']}}" class="we-fancybox-anchor">
-                              <img src="{{$image['thumbnail']}}" alt="{{$image['title']}}" class="img-fluid" loading="lazy" />
+                              <img src="{{$image['thumbnail']}}" alt="{{$image['title']}}" class="img-fluid" loading="lazy" width="{{ $image['thumbnail-w']}}" height="{{ $image['thumbnail-h']}}"/>
                               <div class="l-gallery-item--text u-smalltext u-caption mx-auto">
                                   {{$image['title']}}
                               </div>

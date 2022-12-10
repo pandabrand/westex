@@ -41,7 +41,10 @@ const main = async (err) => {
       percentPosition: true,
       columnWidth: '.grid-sizer'
     });
-    imagesLoaded('.grid').on( 'done', () => msnry.layout() );
+    const imgLoad = imagesLoaded( document.querySelector( '.grid' ) )
+    imgLoad.on( 'always', (instance) => console.log(instance) );
+    imgLoad.on( 'progress', () => msnry.layout() );
+    imgLoad.on( 'done', () => msnry.layout() );
   }
 
   Fancybox.bind("[data-fancybox]", {

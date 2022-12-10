@@ -35,7 +35,11 @@
 
 .grid-sizer,
 .grid-item {
-  width: 33.333%;
+  width: 50%;
+
+  @include media-breakpoint-up(md) {
+    width: 33.333%;
+  }
 }
 
 .grid-item {
