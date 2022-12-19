@@ -28,3 +28,10 @@ $font__main: $body-font;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 $font-size: 16px;
+
+//Box shadow
+$box-shadow:                  0 .5rem 1rem rgba($color__link, .15);
+$box-shadow-sm:               0 .125rem .55rem rgba($color__link, .5);
+$box-shadow-lg:               0 1rem 3rem rgba($color__link, .25);
+$box-shadow-inset:            inset 0 1px 2px rgba($color__link, .175);
+

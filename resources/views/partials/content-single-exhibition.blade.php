@@ -34,7 +34,7 @@
     <div class="u-extra-v-margin u-label-font horizontal-rule">
       {{ $start_date }} - {{ $end_date }}<br/>
       @if($off_site_exhibition == 0)
-        <strong>{{ $term }}</strong>{{ $term_location }}
+        <strong>{!! $term !!}</strong>{!! $term_location !!}
       @endif
     </div>
     <div class="l-exhibition-featured-image mb-5">
@@ -62,11 +62,11 @@
             <a href="{{ $exhibition_image['href'] }}" data-fancybox="gallery-images" data-caption="{{ $exhibition_image['gallery_string'] }}" class="we-fancybox-anchor">
               <img src="{{ $exhibition_image['src'] }}" alt="{{ $exhibition_image['title'] }}" class="img-fluid">
               <div class="l-gallery-item--text u-smalltext u-caption mx-auto">
-                {{ $exhibition_image['title'] }}
+                {!! $exhibition_image['title'] !!}
               </div>
               <label class="we-fancybox-label">
-                <span class="we-fancybox-title emphasis">{{ $exhibition_image['title'] }}</span>
-                <span class="we-fancybox-caption">{{ $exhibition_image['description'] }}</span>
+                <span class="we-fancybox-title emphasis">{!! $exhibition_image['title'] !!}</span>
+                <span class="we-fancybox-caption">{!! $exhibition_image['description'] !!}</span>
               </label>
             </a>
           </div>

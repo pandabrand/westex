@@ -3,7 +3,7 @@
     <div class="col-md-6 pl-0">
       <div class="h2 mb-4 u-label-font">Upcoming Exhibitions On-site</div>
         @foreach( $upcoming_exhibitions as $exhibition )
-            <div class="l-front-gallery_row">
+            <div class="mb-4">
               <div class="c-front-gallery_smalltype u-label-font">
                 {!! $exhibition['term'] !!}
               </div>
@@ -31,7 +31,7 @@
               </div>
               <div class="c-front-gallery_smalltype u-extra-v-margin u-label-font">{{$exhibition['start_date']}} - {{$exhibition['end_date']}}</div>
               @if( $exhibition['thumbnail'] )
-                <a href="{{$exhibition['permalink']}}">
+                <a class="img-link" href="{{$exhibition['permalink']}}">
                   {!! $exhibition['thumbnail'] !!}
                 </a>
               @endif
@@ -41,16 +41,21 @@
     <div class="col-md-6 pl-0">
       <div class="h2 mb-4 u-label-font">Current and Upcoming Exhibitions Off-site</div>
         @foreach( $off_site as $off_site_exhibition )
-          <div class="l-front-gallery_row">
-            <div class="h3 mt-2">
-              @foreach($off_site_exhibition['artists'] as $artist)
-                <div>{!! $artist !!}</div>
-              @endforeach
-
-              @foreach($off_site_exhibition['non_roster_artists'] as $non_roster_artist)
-                <div>{!! $non_roster_artist !!}</div>
-              @endforeach
-            </div>
+          <div class="mb-4">
+            @if ( $off_site_exhibition['artists'] || $off_site_exhibition['non_roster_artists'] )
+              <div class="h3 mt-2">
+                @if ($off_site_exhibition['artists'])
+                  @foreach($off_site_exhibition['artists'] as $artist)
+                    <div>{!! $artist !!}</div>
+                  @endforeach
+                @endif
+                @if ($off_site_exhibition['artists'])
+                  @foreach($off_site_exhibition['non_roster_artists'] as $non_roster_artist)
+                    <div>{!! $non_roster_artist !!}</div>
+                  @endforeach
+                @endif
+              </div>
+            @endif
             <div class="strong emphasis">
               <a href="{{$off_site_exhibition['location_url']}}" title="{{$off_site_exhibition['location_title']}}" target="_blank" rel="noopener noreferrer">
                 {!! $off_site_exhibition['location_title'] !!}
@@ -61,7 +66,7 @@
             <div class="c-front-gallery_smalltype u-label-font">{{$off_site_exhibition['start_date']}} - {{$off_site_exhibition['end_date']}}</div>
             @if( $off_site_exhibition['thumbnail'] )
               <div>
-                <a href="{{$off_site_exhibition['permalink']}}" title="{{$off_site_exhibition['thumbnail_title']}}">
+                <a class="img-link" href="{{$off_site_exhibition['permalink']}}" title="{{$off_site_exhibition['thumbnail_title']}}">
                   {!! $off_site_exhibition['thumbnail'] !!}
                 </a>
               </div>

@@ -45,7 +45,7 @@
     </div>
     <div class="col-md-6 pr-0">
     @if( $exhibition['thumbnail'] )
-        <a href="{{ $exhibition['permalink'] }}" title="{{ $exhibition['thumbnail_title'] }}">
+        <a class="img-link" href="{{ $exhibition['permalink'] }}" title="{{ $exhibition['thumbnail_title'] }}">
             {!! $exhibition['thumbnail'] !!}
         </a>
         <div class="u-smalltext u-caption">

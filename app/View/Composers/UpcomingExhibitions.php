@@ -158,7 +158,7 @@ class UpcomingExhibitions extends Composer
                       return $row['artist_non-roster_name'];
                   },
                   $non_rosters
-              ) : [];
+              ) : false;
 
               $artist_array = get_field('artists', $exhibition->ID);
                     
@@ -167,7 +167,7 @@ class UpcomingExhibitions extends Composer
                       return ['post_title' => $artist->post_title];
                   },
                   $artist_array
-              ): [];
+              ): false;
 
               return [
                 'location_title'       => get_the_title($exhibition->ID),

@@ -103,3 +103,11 @@ h6, .h6 {
 .wx-border {
   border: 1px solid $color__text-main;
 }
+
+.img-link {
+  img {
+    &:hover {
+      box-shadow: $box-shadow-sm;
+    }
+  }
+}
