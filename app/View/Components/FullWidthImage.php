@@ -6,8 +6,8 @@ use Illuminate\View\Component;
 
 class FullWidthImage extends Component
 {
-    public $content;
-    public $full_width_image;
+    use \App\Traits\Westex\WestexImage;
+    public $content, $full_width_image;
     /**
      * Create a new component instance.
      *
@@ -16,7 +16,7 @@ class FullWidthImage extends Component
     public function __construct($content)
     {
         $this->content = $content;
-        $this->full_width_image = $this->getImage($content);
+        $this->full_width_image = $this->getImage($content['image'], $content['fw_image_size'], $content['image_classes']);
     }
 
     /**
@@ -27,14 +27,5 @@ class FullWidthImage extends Component
     public function render()
     {
         return view('components.full-width-image');
-    }
-
-    protected function getImage($data)
-    {
-        if (! isset( $data['image'] ) ) {
-            return false;
-        }
-
-        return wp_get_attachment_image( $data['image'], $data['fw_image_size'], false, $data['image_classes'] );
     }
 }

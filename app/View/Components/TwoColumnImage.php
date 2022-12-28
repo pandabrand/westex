@@ -6,6 +6,7 @@ use Illuminate\View\Component;
 
 class TwoColumnImage extends Component
 {
+    use \App\Traits\Westex\WestexImage;
     public $narrow_class, $image_column_one, $image_column_two, $image_one_caption, $image_two_caption;
     /**
      * Create a new component instance.
@@ -30,14 +31,5 @@ class TwoColumnImage extends Component
     public function render()
     {
         return view('components.two-column-image');
-    }
-
-    protected function getImage( $image_id, $image_size, $image_classes )
-    {
-        if ( ! is_numeric( $image_id ) ) {
-            return false;
-        }
-
-        return wp_get_attachment_image( $image_id, $image_size, false, $image_classes );
     }
 }

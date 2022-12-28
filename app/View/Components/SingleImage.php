@@ -6,6 +6,7 @@ use Illuminate\View\Component;
 
 class SingleImage extends Component
 {
+    use \App\Traits\Westex\WestexImage;
     public $single_image, $image_caption, $narrow_class;
     /**
      * Create a new component instance.
@@ -28,14 +29,5 @@ class SingleImage extends Component
     public function render()
     {
         return view('components.single-image');
-    }
-
-    protected function getImage($image_id, $image_size, $image_classes)
-    {
-        if (! is_numeric( $image_id ) ) {
-            return false;
-        }
-
-        return wp_get_attachment_image( $image_id, $image_size, false, $image_classes );
     }
 }
