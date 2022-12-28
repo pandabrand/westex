@@ -1,7 +1,7 @@
 <div @class([
   'fluid-container', 
   'westex-vr-full-width',
-  'narrow' => $narrow_class
+  'narrow' => $content['narrow_class']
 ])>
   <div class="row no-gutters">
     <div class="col-sm-12">

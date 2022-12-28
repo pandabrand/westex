@@ -135,7 +135,7 @@ class ContentSingleInDepth extends Composer
 						$component['slideshow_size'] = 'slide-show';
 						$component['slideshow_image_class'] = ['class' => 'd-block img-fluid'];
 						$component['narrow_class'] = get_sub_field('narrow_vertical_spacing');
-						$component['content_type'] = 'slideshow';
+						$component['content_type'] = 'slide-show';
 						$flex_array['content'][] = $component;
 					break;
 			  
@@ -170,7 +170,7 @@ class ContentSingleInDepth extends Composer
 						$component['tc_image_size'] = 'viewing-room-large';
 						$component['tc_classes'] = ['class' => 'img-fluid'];
 						$component['narrow_class'] = get_sub_field('narrow_vertical_spacing');
-						$component['content_type'] = 'image';
+						$component['content_type'] = 'single-image';
 						$flex_array['content'][] = $component;
 					break;
 			  

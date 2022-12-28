@@ -21,51 +21,6 @@
 
 @if( $flexible_content['content'] )
   @foreach( $flexible_content['content'] as $content )
-    @switch( $content['content_type'] )
-      @case( 'title-block' )
-        @include('partials.flex-title-block', $content)
-        @break
-
-      @case( 'full-width-image' )
-        @include('partials.flex-full-width-image', $content)
-        @break
-        
-      @case( 'text-wide' )
-        @include('partials.flex-text-wide', $content)
-        @break
-
-      @case( 'media' )
-        @include('partials.flex-media', $content)
-        @break
-
-      @case( 'quote' )
-        @include('partials.flex-quote', $content)
-        @break
-
-      @case( 'two-column-image' )
-        @include('partials.flex-two-column-image', $content)
-        @break
-
-      @case( 'two-column' )
-        @include('partials.flex-two-column', $content)
-        @break
-
-      @case( 'image' )
-        @include('partials.flex-single-image', $content)
-        @break
-
-      @case( 'text' )
-        @include('partials.flex-text', $content)
-        @break
-
-      @case( 'gallery' )
-        @include('partials.flex-gallery', $content)
-        @break
-
-      @case( 'parent-page' )
-        @include('partials.flex-parent-page', $content)
-        @break
-
-    @endswitch
+    <x-dynamic-component :component="$content['content_type']" :content="$content" />
   @endforeach
 @endif
