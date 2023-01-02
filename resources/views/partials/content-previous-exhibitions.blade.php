@@ -22,7 +22,7 @@
       <div class="col-md-6">
         @if($exhibition['switch_title'] == 0)
           @if($exhibition['show_title'] != 0)
-            <div class="h3 emphasis"><a href="{{$exhibition['permalink']}}" title="{{ $exhibition['title'] }}">{{$exhibition['title']}}</a></div>
+            <div class="h3 emphasis"><a href="{{$exhibition['permalink']}}" title="{{ $exhibition['title'] }}">{!! $exhibition['title'] !!}</a></div>
           @endif
         @endif
         <div class="d-flex flex-wrap mt-2">
@@ -34,7 +34,7 @@
           
           @if($exhibition['artist_non_roster'])
             @foreach($exhibition['artist_non_roster'] as $non_roster)
-              <div class="strong h4 px-1">{{$non_roster}}</div>
+              <div class="strong h4 px-1">{!! $non_roster !!}</div>
             @endforeach
           @endif
         </div>
