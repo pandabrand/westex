@@ -16,7 +16,7 @@
             {!! $flex_slideshow_image['slide_img'] !!}
             @if ( $flex_slideshow_image['image_caption'] )
               <div class="carousel-caption d-none d-md-block">
-                <p>{{ $flex_slideshow_image['image_caption'] }}</p>
+                <p>{!! $flex_slideshow_image['image_caption'] !!}</p>
               </div>
             @endif
           </div>

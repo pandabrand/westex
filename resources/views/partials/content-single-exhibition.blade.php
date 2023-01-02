@@ -39,14 +39,14 @@
     </div>
     <div class="l-exhibition-featured-image mb-5">
       {!! $thumbnail !!}
-      <div class="u-smalltext u-label-font text-left">{{ $thumbnail_title }}</div>
+      <div class="u-smalltext u-label-font text-left">{!! $thumbnail_title !!}</div>
     </div>
     @if($off_site_exhibition == 1)
       <div>
         @if($off_site_url)
-          <a href="{{ $off_site_url }}" target="_blank">{{ $off_site_details }}</a>
+          <a href="{{ $off_site_url }}" target="_blank">{!! $off_site_details !!}</a>
         @else
-          {{ $off_site_details }}
+          {!! $off_site_details !!}
         @endif
       </div>
     @endif

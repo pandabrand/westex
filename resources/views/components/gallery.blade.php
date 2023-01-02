@@ -13,11 +13,11 @@
               <a href="{{ $flex_image['href'] }}" data-fancybox="gallery-images" data-caption="{{ $flex_image['gallery_string'] }}"  class="we-fancybox-anchor">
                 <img class="img-fluid" src="{{ $flex_image['src'] }}">
                 <div class="l-gallery-item--text u-smalltext u-caption mx-auto">
-                  {{ $flex_image['title'] }}
+                  {!! $flex_image['title'] !!}
                 </div>
                 <label class="we-fancybox-label">
-                  <span class="we-fancybox-title emphasis">{{ $flex_image['title'] }}</span>
-                  <span class="we-fancybox-caption">{{ $flex_image['description'] }}</span>
+                  <span class="we-fancybox-title emphasis">{!! $flex_image['title'] !!}</span>
+                  <span class="we-fancybox-caption">{!! $flex_image['description'] !!}</span>
                 </label>
               </a>
             </div>

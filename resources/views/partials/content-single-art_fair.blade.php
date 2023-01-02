@@ -42,11 +42,11 @@
                   <a href="{{$image['href']}}" data-fancybox="gallery-images" data-caption="{{$image['caption']}}" class="we-fancybox-anchor">
                       <img src="{{$image['url']}}" alt="{{$image['title']}}" class="img-fluid" loading="lazy" width="{{ $image['url-w'] }}" height="{{ $image['url-h'] }}" />
                       <div class="l-gallery-item--text u-smalltext u-caption mx-auto">
-                          {{$image['title']}}
+                          {!! $image['title'] !!}
                       </div>
                       <div class="we-fancybox-label">
-                          <span class="we-fancybox-title emphasis">{{$image['title']}}</span>
-                          <span class="we-fancybox-caption">{{$image['description']}}</span>
+                          <span class="we-fancybox-title emphasis">{!! $image['title'] !!}</span>
+                          <span class="we-fancybox-caption">{!! $image['description'] !!}</span>
                       </div>
                   </a>
               </div>
