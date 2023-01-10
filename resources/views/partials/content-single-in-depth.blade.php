@@ -19,8 +19,18 @@
   </div>
 @endif    
 
-@if( $flexible_content['content'] )
-  @foreach( $flexible_content['content'] as $content )
-    <x-dynamic-component :component="$content['content_type']" :content="$content" />
-  @endforeach
-@endif
+@php
+  $args = array(
+    'post_type'            => 'in-depth',
+    'posts_per_page'       => '5',
+    'loading_style'        => 'infinite fading-blocks',
+    'scroll'               => 'true',
+    'acf'                  => 'true',
+    'acf_field_type'       => 'flexible',
+    'acf_field_name'       => 'westex_blocks',
+    'order'                => 'ASC',
+  );	
+  if(function_exists('alm_render')){
+    alm_render($args);
+  }
+@endphp

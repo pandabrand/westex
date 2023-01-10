@@ -268,3 +268,5 @@ add_action( 'init', __NAMESPACE__ . '\\westex_change_post_object' );
 
 // remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart');
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta');
+
+add_filter( 'alm_debug', '__return_true' );
