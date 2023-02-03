@@ -243,6 +243,21 @@ class Front extends Composer
 						'orderby' => 'meta_value_num',
 						'meta_key' => 'start_date',
 						'order' => 'DESC',
+						'meta_query' => array(
+							'relation' => 'AND',
+							'start_date_clause' => array(
+								'key' => 'start_date',
+								'compare' => '<=',
+								'value' => $today,
+								'type' => 'DATE',
+							),
+							'end_date_clause' => array(
+								'key' => 'end_date',
+								'compare' => '>=',
+								'value' => $today,
+								'type' => 'DATE',
+							),
+						)
 					);
 					$ind_posts = get_posts($args);
 					return array_map(

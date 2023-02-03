@@ -160,12 +160,12 @@ class UpcomingExhibitions extends Composer
                   $non_rosters
               ) : false;
 
-              $artist_array = get_field('artists', $exhibition->ID);
+              $artist_array = get_field('artist', $exhibition->ID);
                     
               $artists = ($artist_array) ? array_map(
-                  function ($artist) {
-                      return ['post_title' => $artist->post_title];
-                  },
+                    function ($artist) {
+                        return $artist->post_title;
+                    },
                   $artist_array
               ): false;
 
