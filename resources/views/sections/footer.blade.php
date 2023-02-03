@@ -11,7 +11,7 @@
         <div class="u-label-font text-right">
           Gallery hours<br/>
           Wednesday thru Saturday, 12 to 6pm<br>
-          Sunday, 10am to 3pm
+          Sunday, 12am to 4pm
         </div>
       </div>
       <div class="px-0 px-md-4 d-flex flex-column justify-content-between">
