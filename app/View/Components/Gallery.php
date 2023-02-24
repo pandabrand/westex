@@ -14,6 +14,7 @@ class Gallery extends Component
      */
     public function __construct($content)
     {
+        error_log(print_r($content, true));
         $this->flex_gallery_images = $this->galleryImages($content['gallery_images']);
         $this->narrow_class        = $content['narrow_class'];
     }

@@ -27,9 +27,8 @@
         <div class="l-gallery-images">
           @if(count($artist_images['collection']))
             <div class="grid">
-              <div class="grid-sizer">
                 @foreach($artist_images['collection'] as $image)
-                  <div class="grid-item p-2">
+                  <div class="grid-item">
                       <div class="l-gallery-item">
                           <a href="{{$image['url']}}" data-fancybox="gallery-images" data-caption="{{$image['caption']}}" class="we-fancybox-anchor">
                               <img src="{{$image['thumbnail']}}" alt="{{$image['title']}}" class="img-fluid" loading="lazy" width="{{ $image['thumbnail-w']}}" height="{{ $image['thumbnail-h']}}"/>

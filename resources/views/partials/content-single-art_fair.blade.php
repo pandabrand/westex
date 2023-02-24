@@ -14,16 +14,16 @@
     </div>
     <div class="d-flex flex-wrap">
       @foreach ( $artists as $artist )
-        <div class="pr-2 c-front-gallery_smalltype">{!! $artist !!}}</div>
+        <div class="pr-2 c-front-gallery_smalltype">{!! $artist !!}</div>
       @endforeach
       
       @foreach ( $artists_non_roster as $artist_non_roster )
-        <div class="pr-2 c-front-gallery_smalltype">{!! $artist_non_roster !!}}</div>
+        <div class="pr-2 c-front-gallery_smalltype">{!! $artist_non_roster !!}</div>
       @endforeach
     </div>
 
     @if ( $booth )
-      <div class="my-2 c-front-gallery_smalltype u-label-font">{!! $booth !!}}</div>
+      <div class="my-2 c-front-gallery_smalltype u-label-font">{!! $booth !!}</div>
     @endif
 
     <div class="l-exhibition-featured-image mb-5">
@@ -35,9 +35,8 @@
 
   <footer>
     <div class="grid">
-      <div class="grid-sizer"></div>
       @foreach ( $gallery_images as $image )
-          <div class="grid-item p-2">
+          <div class="grid-item">
               <div class="l-gallery-item">
                   <a href="{{$image['href']}}" data-fancybox="gallery-images" data-caption="{{$image['caption']}}" class="we-fancybox-anchor">
                       <img src="{{$image['url']}}" alt="{{$image['title']}}" class="img-fluid" loading="lazy" width="{{ $image['url-w'] }}" height="{{ $image['url-h'] }}" />

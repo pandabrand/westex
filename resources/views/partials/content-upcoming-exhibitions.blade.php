@@ -7,19 +7,17 @@
               <div class="c-front-gallery_smalltype u-label-font">
                 {!! $exhibition['term'] !!}
               </div>
-              @if($exhibition['switch_title'] != 0)
-                @if($exhibition['show_title'] != 0)
-                  <div class="h3 emphasis">
-                    <a href="{{$exhibition['permalink']}}">
-                      {!! $exhibition['title'] !!}
-                    </a>
-                  </div>
-                @endif
+              @if($exhibition['show_title'] != 0)
+                <div class="h3 emphasis">
+                  <a href="{{$exhibition['permalink']}}">
+                    {!! $exhibition['title'] !!}
+                  </a>
+                </div>
               @endif
               <div class="d-flex flex-wrap mt-2">
                 @if($exhibition['artists'])
                   @foreach($exhibition['artists'] as $artist)
-                    <div class="strong pr-2">{!! $artist->post_title !!}</div>
+                    <div class="strong pr-2">{!! $artist['post_title'] !!}</div>
                   @endforeach
                 @endif
                 
@@ -49,7 +47,7 @@
                     <div>{!! $artist !!}</div>
                   @endforeach
                 @endif
-                @if ($off_site_exhibition['artists'])
+                @if ($off_site_exhibition['non_roster_artists'])
                   @foreach($off_site_exhibition['non_roster_artists'] as $non_roster_artist)
                     <div>{!! $non_roster_artist !!}</div>
                   @endforeach

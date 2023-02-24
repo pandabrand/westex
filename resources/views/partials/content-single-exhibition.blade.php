@@ -31,7 +31,7 @@
   </header>
 
   <div class="entry-content">
-    <div class="u-extra-v-margin u-label-font horizontal-rule">
+    <div class="u-extra-v-margin u-label-font">
       {{ $start_date }} - {{ $end_date }}<br/>
       @if($off_site_exhibition == 0)
         <strong>{!! $term !!}</strong>{!! $term_location !!}
@@ -55,9 +55,8 @@
 
   <footer>
     <div class="grid">
-      <div class="grid-sizer"></div>
       @foreach($exhibition_images as $exhibition_image)
-        <div class="grid-item p-2">
+        <div class="grid-item">
           <div class="l-gallery-item">
             <a href="{{ $exhibition_image['href'] }}" data-fancybox="gallery-images" data-caption="{{ $exhibition_image['gallery_string'] }}" class="we-fancybox-anchor">
               <img src="{{ $exhibition_image['src'] }}" alt="{{ $exhibition_image['title'] }}" class="img-fluid">

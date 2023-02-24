@@ -33,8 +33,7 @@
 
 /* ---- .grid-item ---- */
 
-.grid-sizer,
-.grid-item {
+.grid-sizer {
   width: 50%;
 
   @include media-breakpoint-up(md) {
@@ -42,13 +41,33 @@
   }
 }
 
-.grid-item {
-  float: left;
+// .grid-item {
+//   float: left;
+// }
+
+// .grid-item img {
+//   display: block;
+//   width: 100%;
+// }
+
+.grid {
+  display: grid;
+  column-gap: 1em;
+  row-gap: 1em;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.grid-item img {
-  display: block;
-  width: 100%;
+.grid-item {
+  padding: 1em;
+
+  img {
+    display: block;
+    width: 100%;
+  }
 }
 
 /* ---- fancybox ---- */

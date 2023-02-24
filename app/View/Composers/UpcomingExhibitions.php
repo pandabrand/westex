@@ -35,40 +35,36 @@ class UpcomingExhibitions extends Composer
      */
     public function upcomingGallery()
     {
-        $today = date('Ymd');
-        // if (false === ( $gallery_posts = get_transient('front_upcoming') )) {
-            $args = array(
-              'numberofposts' => 3,
-              'post_type' => ['exhibition'],
-              'tax_query' => array(
-                array(
-                  'taxonomy' => 'location',
-                  'field' => 'slug',
-                  'terms' => array('gallery-one', 'gallery-two', 'gallery-one-and-two')
-                  )
-                ),
-                'meta_query' => array(
-                  'display_start_date_clause' => array(
-                    'key' => 'display_start_date',
-                    'compare' => '>',
-                    'value' => $today,
-                  ),
-                  array(
-                    'key' => 'off-site_exhibition',
-                    'compare' => '==',
-                    'value' => '0',
-                  ),
-                  'gallery_location_clause' => array(
-                    'key' => 'gallery_location',
-                    'compare' => 'EXISTS'
-                    )
-                  ),
-                  'orderby' => array('display_start_date_clause' => 'ASC', 'gallery_location_clause' => 'ASC'),
-                );
-                $gallery_posts = get_posts($args);
-                // set_transient('front_upcoming', $gallery_posts, 60*60*12);
-        // }
-        $upcoming_galleries = array_map(
+        $date_now = date('Y-m-d H:i:s');
+
+        $args = array(
+          'posts_per_page' => 3,
+          'post_type' => ['exhibition'],
+          'tax_query' => array(
+            array(
+              'taxonomy' => 'location',
+              'field' => 'slug',
+              'terms' => array('gallery-one', 'gallery-two', 'gallery-one-and-two', 'skokie')
+              )
+            ),
+            'meta_query' => array(
+              'display_start_date_clause' => array(
+                'key' => 'start_date',
+                'type'=> 'DATETIME',
+                'compare' => '>',
+                'value' => $date_now,
+              ),
+              'gallery_location_clause' => array(
+                'key' => 'gallery_location',
+                'compare' => 'EXISTS'
+              )
+          ),
+          'orderby' => array('display_start_date_clause' => 'ASC', 'gallery_location_clause' => 'ASC'),
+        );
+
+        $gallery_posts = get_posts($args);
+
+          $upcoming_galleries = array_map(
             function ($upcoming) {
                     $artist_array = get_field('artists', $upcoming->ID);
                     
@@ -81,13 +77,14 @@ class UpcomingExhibitions extends Composer
                     
                     $location = get_the_terms($upcoming->ID, 'location');
                     $term = array_pop($location);
+                    $anr = get_field('artist_non-roster', $upcoming->ID);
 
-                    $artists_non_roster = array_map(
+                    $artists_non_roster = ($anr) ? array_map(
                         function ($row) {
                             return $row['artist_non-roster_name'];
                         },
-                        get_field('artist_non-roster', $upcoming->ID)
-                    );
+                        $anr
+                    ): [];
     
                 return [
                   'permalink'          => get_permalink($upcoming->ID),

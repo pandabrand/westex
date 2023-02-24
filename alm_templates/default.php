@@ -3,7 +3,7 @@
 use Roots\view;
 
 $layout = get_row_layout();
-switch ($layout) {
+switch ( $layout ) {
 	case 'title_block':
 			$content = [
 				'narrow_class' => get_sub_field('narrow_vertical_spacing'),
@@ -11,16 +11,16 @@ switch ($layout) {
 				'title' => get_sub_field('title'),
 			];
 			echo view(__DIR__ . '/../resources/views/components/title-block', $content);
-			break;
-		
+		break;
+
 	case 'full_width_image_block':
 			$content = [
 				'narrow_class'     => get_sub_field('narrow_vertical_spacing'),
 				'full_width_image' => wp_get_attachment_image(get_sub_field('image'), 'viewing-room-full', false, ['img-fw', 'img-fluid']),
 			];
 			echo view(__DIR__ . '/../resources/views/components/full-width-image.blade.php', $content);
-			break;
-		
+		break;
+
 	case 'two_column_block':
 			$content = [
 				'image_column'          => wp_get_attachment_image(get_sub_field('image'), 'viewing-room', false, ['class' => 'img-fluid']),
@@ -32,7 +32,7 @@ switch ($layout) {
 			];
 			echo view(__DIR__ . '/../resources/views/components/two-column.blade.php', $content);
 			break;
-		
+
 	case 'image_block':
 			$content = [
 				'single_image'         => wp_get_attachment_image(get_sub_field('image'), 'viewing-room-large', false, ['class' => 'img-fluid']),
@@ -40,8 +40,8 @@ switch ($layout) {
 				'narrow_class'  => get_sub_field('narrow_vertical_spacing'),
 			];
 			echo view(__DIR__ . '/../resources/views/components/single-image.blade.php', $content);
-			break;
-		
+		break;
+
 	case 'parent_page_block':
 			$child_post = get_sub_field('child_page')[0];
 			$child_title = !empty(get_sub_field('title')) ? get_sub_field('title') : get_the_title($child_post);
@@ -55,7 +55,7 @@ switch ($layout) {
 			];
 			echo view(__DIR__ . '/../resources/views/components/parent-page.blade.php', $content);
 			break;
-		
+
 	case 'two_column_image_block':
 			$content = [
 				'image_column_one'  => wp_get_attachment_image(get_sub_field('image_one'), 'viewing-room', false, ['class' => 'img-fluid'] ),
@@ -65,8 +65,8 @@ switch ($layout) {
 				'narrow_class'  => get_sub_field('narrow_vertical_spacing'),
 			];
 			echo view(__DIR__ . '/../resources/views/components/two-column-image.blade.php', $content);
-			break;
-		
+		break;
+
 	case 'slideshow_block':
 			$content = [
 				'images'         => get_sub_field('images'),
@@ -75,15 +75,28 @@ switch ($layout) {
 				'narrow_class'  => get_sub_field('narrow_vertical_spacing'),
 			];
 			echo view(__DIR__ . '/../resources/views/components/slide-show.blade.php', $content);
-			break;
-		
+		break;
+
 	case 'gallery_block':
+			$gallery_images = ( get_sub_field( 'gallery_images' ) ) ? array_map(
+				function( $image ) {
+					return array(
+						'href'           => ( 'video' == $image['type'] ) ? $image['url'] : $image['sizes']['large'],
+						'gallery_string' => htmlentities( str_replace( PHP_EOL, ' ', $image['title'] . ' ' . $image['description'] ), ENT_QUOTES ),
+						'src'            => $image['sizes']['large'],
+						'title'          => $image['title'],
+						'description'    => $image['description'],
+					);
+				},
+				get_sub_field( 'gallery_images' )
+			) : array();
+
 			$content = [
-				'gallery_images' => get_sub_field('gallery_images'),
-				'narrow_class'   => get_sub_field('narrow_vertical_spacing'),
+				'gallery_images' => $gallery_images,
+				'narrow_class'   => get_sub_field( 'narrow_vertical_spacing' ),
 			];
-			echo view(__DIR__ . '/../resources/views/components/gallery.blade.php', $content);
-			break;
+			echo view( __DIR__ . '/../resources/views/components/gallery.blade.php', $content );
+		break;
 		
 	case 'embed_media_block':
 			$content = [

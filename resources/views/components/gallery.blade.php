@@ -6,9 +6,8 @@
   <div class="row justify-content-center">
     <div class="col-sm-12">
       <div class="grid">
-        <div class="grid-sizer"></div>
-        @foreach ( $flex_gallery_images as $flex_image )
-          <div class="grid-item p-2">
+        @foreach ( $gallery_images as $flex_image )
+          <div class="grid-item">
             <div class="l-gallery-item">
               <a href="{{ $flex_image['href'] }}" data-fancybox="gallery-images" data-caption="{{ $flex_image['gallery_string'] }}"  class="we-fancybox-anchor">
                 <img class="img-fluid" src="{{ $flex_image['src'] }}">
