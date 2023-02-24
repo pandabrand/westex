@@ -76,9 +76,9 @@ class SingleArtFair extends Composer
 			return [
 				'caption'     => $gallery_string,
 				'href'        => $image_href,
-				'url'         => $image['sizes']['medium'],
-				'url-w'       => $image['sizes']['medium-width'],
-				'url-h'       => $image['sizes']['medium-height'],
+				'url'         => $image['sizes']['large'],
+				'url-w'       => $image['sizes']['large-width'],
+				'url-h'       => $image['sizes']['large-height'],
 				'title'       => $image['title'],
 				'description' => $image['description'],
 			];

@@ -32,20 +32,20 @@ const main = async (err) => {
     jsLinks.forEach((link) => link.addEventListener('click', windowOpener))
   }
 
-  const grid = document.querySelector('.grid')
+  // const grid = document.querySelector('.grid')
   const front_carousel = document.querySelector('.front-carousel')
 
-  if( grid ) {
-    var msnry = new Masonry(grid, {
-      itemSelector: '.grid-item',
-      percentPosition: true,
-      columnWidth: '.grid-sizer'
-    });
-    const imgLoad = imagesLoaded( document.querySelector( '.grid' ) )
-    imgLoad.on( 'always', (instance) => console.log(instance) );
-    imgLoad.on( 'progress', () => msnry.layout() );
-    imgLoad.on( 'done', () => msnry.layout() );
-  }
+  // if( grid ) {
+  //   var msnry = new Masonry(grid, {
+  //     itemSelector: '.grid-item',
+  //     percentPosition: true,
+  //     columnWidth: '.grid-sizer'
+  //   });
+  //   const imgLoad = imagesLoaded( document.querySelector( '.grid' ) )
+  //   imgLoad.on( 'always', (instance) => console.log(instance) );
+  //   imgLoad.on( 'progress', () => msnry.layout() );
+  //   imgLoad.on( 'done', () => msnry.layout() );
+  // }
 
   Fancybox.bind("[data-fancybox]", {
     protect: true,

@@ -43,9 +43,9 @@ class SingleArtist extends Composer
 				'title'       => $image['title'],
 				'url'         => ('video' == $image['type']) ? $image['url'] : $image['sizes']['large'],
 				'description' => $image['description'],
-				'thumbnail'   => $image['sizes']['medium'],
-				'thumbnail-w' => $image['sizes']['medium-width'],
-				'thumbnail-h' => $image['sizes']['medium-height'],
+				'thumbnail'   => $image['sizes']['large'],
+				'thumbnail-w' => $image['sizes']['large-width'],
+				'thumbnail-h' => $image['sizes']['large-height'],
 				'caption'     => htmlentities(str_replace(PHP_EOL, ' ' , $image['title'] . ' ' . $image['description']), ENT_QUOTES),
 			];
 
