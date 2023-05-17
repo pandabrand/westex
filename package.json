@@ -20,6 +20,7 @@
     "deploy": "node deploy"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-0",
     "@fancyapps/ui": "^4.0.31",
     "@popperjs/core": "^2.11.6",
     "@roots/bud": "6.3.5",
@@ -27,12 +28,15 @@
     "@roots/sage": "6.3.5",
     "bootstrap": "^5.2.0",
     "dotenv": "^16.0.3",
+    "flickity": "^3.0.0",
     "ftp-deploy": "^2.4.3",
     "imagesloaded": "^5.0.0",
     "masonry-layout": "^4.2.2",
+    "postcss": "^8.3.3",
+    "postcss-loader": "^7.3.0",
+    "promise-ftp-common": "^1.1.5",
+    "stylelint": "^14.5.1",
     "tether": "^2.0.0"
   },
-  "dependencies": {
-    "flickity": "^3.0.0"
-  }
+  "dependencies": {}
 }
