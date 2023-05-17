@@ -15,6 +15,7 @@ class FullWidthImage extends Component
      */
     public function __construct($content)
     {
+        error_log( print_r( $content, true ) );
         $this->content = $content;
         $this->full_width_image = $this->getImage($content['image'], $content['fw_image_size'], $content['image_classes']);
     }

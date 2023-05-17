@@ -6,19 +6,20 @@ $layout = get_row_layout();
 switch ( $layout ) {
 	case 'title_block':
 			$content = [
-				'narrow_class' => get_sub_field('narrow_vertical_spacing'),
-				'artist' => get_sub_field('artist'),
-				'title' => get_sub_field('title'),
+				'narrow_class' => get_sub_field( 'narrow_vertical_spacing' ),
+				'artist' => get_sub_field( 'artist' ),
+				'title' => get_sub_field( 'title' ),
 			];
-			echo view(__DIR__ . '/../resources/views/components/title-block', $content);
+			echo view( __DIR__ . '/../resources/views/components/title-block.blade.php', $content );
 		break;
 
 	case 'full_width_image_block':
 			$content = [
-				'narrow_class'     => get_sub_field('narrow_vertical_spacing'),
-				'full_width_image' => wp_get_attachment_image(get_sub_field('image'), 'viewing-room-full', false, ['img-fw', 'img-fluid']),
+				'narrow_class'     => get_sub_field( 'narrow_vertical_spacing' ),
+				'full_width_image' => wp_get_attachment_image( get_sub_field( 'image' ), 'viewing-room-full-nh', false, array( 'class' => 'img-fw img-fluid' ) ),
 			];
-			echo view(__DIR__ . '/../resources/views/components/full-width-image.blade.php', $content);
+			error_log( print_r( $content, true ) );
+			echo view( __DIR__ . '/../resources/views/components/full-width-image.blade.php', $content );
 		break;
 
 	case 'two_column_block':
@@ -128,7 +129,6 @@ switch ( $layout ) {
 				'narrow_class' => get_sub_field('narrow_vertical_spacing'),
 				'body'         => get_sub_field('text_body'),
 			];
-			error_log( print_r( $content, true ) );
 			echo view(__DIR__ . '/../resources/views/components/text-wide.blade.php', $content);
 			break;
 		

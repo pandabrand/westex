@@ -1,9 +1,9 @@
-<div {{ $attributes->class([
+<div @class([
   'container', 
   'westex-vr-title',
   'x-westex-vr-title',
   'narrow' => $narrow_class
-]) }}>
+])>
 <div class="row justify-content-md-start justify-content-sm-center">
     <div class="col-sm-10">
       <h1>{!! $title !!}</h1>

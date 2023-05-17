@@ -192,6 +192,7 @@ function westex_image_sizes() {
   add_image_size( 'viewing-room', 720, 720 );
   add_image_size( 'viewing-room-large', 1440, 810 );
   add_image_size( 'viewing-room-full', 2400, 500 );
+  add_image_size( 'viewing-room-full-nh', 2400 );
   add_image_size( 'slide-show', 500, 500 );
 }
 add_action( 'after_setup_theme', 'westex_image_sizes' );

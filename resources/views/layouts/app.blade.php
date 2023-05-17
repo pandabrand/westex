@@ -10,7 +10,7 @@
         </main>
 
         @hasSection('sidebar')
-          <aside class="sidebar">
+          <aside class="sidebar here">
             @yield('sidebar')
           </aside>
         @endif
