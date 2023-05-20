@@ -28,7 +28,7 @@
                             @endforeach
 
                             @if($upcoming['show_title'] == 0)
-                                <a href="$upcoming['permalink']">
+                                <a href="{{ $upcoming['permalink'] }}">
                             @endif
                             @foreach($upcoming['artist_non_roster'] as $non_roster_name)
                                 <div class="pr-2">{{ $non_roster_name }}</div>
@@ -50,7 +50,7 @@
                         @endforeach
 
                         @if($upcoming['show_title'] == 0)
-                            <a href="$upcoming['permalink']">
+                            <a href="{{ $upcoming['permalink'] }}">
                         @endif
                         @foreach($upcoming['artist_non_roster'] as $non_roster_name)
                             <div class="pr-2">{!! $non_roster_name !!}</div>
