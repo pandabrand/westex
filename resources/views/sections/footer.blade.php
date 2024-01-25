@@ -10,7 +10,7 @@
         </address>
         <div class="u-label-font text-right">
           Gallery hours<br/>
-          Wednesday thru Saturday, 12 to 6pm<br>
+          Thursday thru Saturday, 12 to 6pm<br>
           Sunday, 12 to 4pm
         </div>
       </div>
