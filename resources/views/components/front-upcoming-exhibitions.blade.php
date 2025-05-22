@@ -10,13 +10,13 @@
                     </div>
                     @if($upcoming['switch_title'] == 1)
                         @if($upcoming['show_title'] == 1)
-                            <div class="strong emphasis mb-2">
+                            <div class="strong emphasis mb-2 fs-4">
                                 <a href="{{ $upcoming['permalink'] }}" title="{{ $upcoming['title'] }}">
                                     {!! $upcoming['title'] !!}
                                 </a>
                             </div>
                         @endif
-                        <div class="d-flex flex-wrap">
+                        <div class="d-flex flex-wrap justify-content-between">
                             @foreach ($upcoming['artists'] as $artist)
                                 @if($upcoming['show_title'] == 1)
                                     <a href="{{ $upcoming['permalink'] }}">

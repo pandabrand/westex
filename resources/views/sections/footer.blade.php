@@ -2,18 +2,6 @@
   <div class="container">
     <div class="d-flex flex-column-reverse flex-md-row-reverse c-footer">
       @php(dynamic_sidebar('sidebar-footer'))
-      <div class="d-flex flex-column justify-content-between">
-        <address class="py-2 pl-2 text-right">
-          <span class="strong">(northern) Western Exhibitions</span><br/>
-          7933 N Lincoln Ave,<br/>
-          Skokie, IL 60077 USA<br/>
-        </address>
-        <div class="u-label-font text-right">
-          Gallery hours<br/>
-          Thursday thru Saturday, 12 to 6pm<br>
-          Sunday, 12 to 4pm
-        </div>
-      </div>
       <div class="px-0 px-md-4 d-flex flex-column justify-content-between">
         <address class="py-2 pl-2 text-right">
           <span class="strong">Western Exhibitions</span><br/>
