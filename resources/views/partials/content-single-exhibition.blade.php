@@ -3,21 +3,21 @@
 
     @if( $switch_title == 1 )
       @if( $show_title == 1 )
-        <h1 class="emphasis h3">
+        <h1 class="emphasis h1">
           {!! $title !!}
         </h1>
       @endif
     @endif
     
-    <div class="d-flex flex-wrap">
+    <div class="d-flex flex-wrap justify-content-between">
       @foreach($artists as $artist)
-        <div class="pr-2 h1">
+        <div class="pr-2 h2">
           <a href="{{ $artist['permalink'] }}">{!! $artist['title'] !!}</a>
         </div>
       @endforeach
 
       @foreach($non_roster_artists as $non_roster_artist)
-        <div class="pr-2 h1">{!! $non_roster_artist !!}</div>
+        <div class="pr-2 h2">{!! $non_roster_artist !!}</div>
       @endforeach
     </div>
 
