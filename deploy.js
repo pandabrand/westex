@@ -24,6 +24,7 @@ const config = {
         'yarn.lock',
         'composer.lock',
         'vendor/squizlabs/**',
+        'yarn-error.log',
     ],
     deleteRemote:false,
     forcePasv: true,
