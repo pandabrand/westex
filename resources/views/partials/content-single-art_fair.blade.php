@@ -12,7 +12,7 @@
     <div>
       {!! $location['address'] !!}
     </div>
-    <div class="d-flex flex-wrap">
+    <div class="d-flex flex-wrap gap-4">
       @foreach ( $artists as $artist )
         <div class="pr-2 c-front-gallery_smalltype">{!! $artist !!}</div>
       @endforeach
